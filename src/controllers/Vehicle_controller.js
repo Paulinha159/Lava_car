@@ -11,13 +11,12 @@ export const store = async (req, res) => {
 
 export const index = async (req, res) => {
     try {
-        const content = await Vehicle.find().exec();
+        const content = await Maintenance.find(req.query).exec();
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)
     }
 }
-
 export const show = async (req, res) => {
     try {
         const content = await Maintenance.findById(req.params.id).populate("Maintenance").exec();

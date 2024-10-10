@@ -26,6 +26,6 @@ const workshopSchema = new Schema({
 }
 });
 
-const Workshop = model("workshop", workshopSchema);
+const Workshop = model("Workshop", workshopSchema);
 
 export default Workshop;

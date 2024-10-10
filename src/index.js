@@ -6,9 +6,9 @@
 import e from "express";
 import "dotenv/config";
 import "./db.js";
-import Workshop_router from "./routes/ Workshop_route.js";
-import Maintenance_router from "./routes/ Maintenance_route.js";
-import Vehicle_router from "./routes/ Vehicle_route.js";
+import Workshop_router from "./routes/Workshop_route.js";
+import Maintenance_router from "./routes/Maintenance_route.js";
+import Vehicle_router from "./routes/Vehicle_route.js";
 
 const app = e();
 

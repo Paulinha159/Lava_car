@@ -6,7 +6,7 @@ import {
   show,
   store,
   update,
-} from "../controllers/ Workshop_controller.js";
+} from "../controllers/Workshop_controller.js";
 
 const router = Router();
 
