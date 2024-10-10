@@ -1,19 +1,14 @@
-/* 
- O modelo define os dados dos documentos que vão 
- pertencer a uma coleção
-*/
 
 import { Schema, model } from "mongoose";
 
-const veiculoSchema = new Schema({
-  placa: {
-    type: String,
-    required: true,
-    unique: true,
-    maxLength: 7,
-    minLength: 7
+const maintenanceSchema = new Schema({
+  workshop: {
+    type: Schema.Types.ObjectId,
+    ref: "workshop",
+    required: true
+   
   },
-  nome: {
+  name: {
     type: String,
     required: true
   },
@@ -34,6 +29,6 @@ const veiculoSchema = new Schema({
   }
 });
 
-const Veiculo = model("Veiculo", veiculoSchema);
+const Maintenance = model("Maintenance", maintenanceSchema);
 
-export default Veiculo;
+export default Maintenance;

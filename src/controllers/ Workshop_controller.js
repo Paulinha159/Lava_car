@@ -2,11 +2,11 @@
  Definir a implementação de um serviço definido na rota
 */
 
-import Veiculo from "../models/veiculo_model.js"
+import Workshop from "../models/ Workshop_model.js"
 
 export const store = async (req, res) => {
     try {
-        const content = await Veiculo.create(req.body);
+        const content = await Workshop.create(req.body);
         res.status(201).json(content)
     } catch (error) {
         res.status(400).send(error.message)
@@ -15,7 +15,7 @@ export const store = async (req, res) => {
 
 export const index = async (req, res) => {
     try {
-        const content = await Veiculo.find(req.query).exec();
+        const content = await Workshop.find().exec();
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)
@@ -24,7 +24,7 @@ export const index = async (req, res) => {
 
 export const show = async (req, res) => {
     try {
-        const content = await Veiculo.findById(req.params.id).populate("cliente").exec();
+        const content = await Maintenance.findById(req.params.id).populate("Maintenance").exec();
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)
@@ -33,7 +33,7 @@ export const show = async (req, res) => {
 
 export const update = async (req, res) => {
     try {
-        const content = await Veiculo.findByIdAndUpdate(req.params.id, req.body).exec();
+        const content = await Workshop.findByIdAndUpdate(req.params.id, req.body).exec();
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)
@@ -42,7 +42,7 @@ export const update = async (req, res) => {
 
 export const destroy = async (req, res) => {
     try {
-        const content = await Veiculo.findByIdAndDelete(req.params.id).exec();
+        const content = await Workshop.findByIdAndDelete(req.params.id).exec();
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)

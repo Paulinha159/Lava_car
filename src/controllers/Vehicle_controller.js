@@ -1,12 +1,8 @@
-/*
- Definir a implementação de um serviço definido na rota
-*/
-
-import Cliente from "../models/cliente_model.js"
+import Vehicle from "../models/Vehicle_model.js"
 
 export const store = async (req, res) => {
     try {
-        const content = await Cliente.create(req.body);
+        const content = await Vehicle.create(req.body);
         res.status(201).json(content)
     } catch (error) {
         res.status(400).send(error.message)
@@ -15,7 +11,7 @@ export const store = async (req, res) => {
 
 export const index = async (req, res) => {
     try {
-        const content = await Cliente.find().exec();
+        const content = await Vehicle.find().exec();
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)
@@ -24,7 +20,7 @@ export const index = async (req, res) => {
 
 export const show = async (req, res) => {
     try {
-        const content = await Cliente.findById(req.params.id).exec();
+        const content = await Maintenance.findById(req.params.id).populate("Maintenance").exec();
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)
@@ -33,7 +29,7 @@ export const show = async (req, res) => {
 
 export const update = async (req, res) => {
     try {
-        const content = await Cliente.findByIdAndUpdate(req.params.id, req.body).exec();
+        const content = await Vehicle.findByIdAndUpdate(req.params.id, req.body).exec();
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)
@@ -42,7 +38,7 @@ export const update = async (req, res) => {
 
 export const destroy = async (req, res) => {
     try {
-        const content = await Cliente.findByIdAndDelete(req.params.id).exec();
+        const content = await Vehicle.findByIdAndDelete(req.params.id).exec();
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)

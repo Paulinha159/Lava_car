@@ -1,6 +1,3 @@
-/*
- Cria a conexão com o banco
-*/
 
 import mongoose from "mongoose";
 

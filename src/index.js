@@ -6,14 +6,16 @@
 import e from "express";
 import "dotenv/config";
 import "./db.js";
-import cliente_router from "./routes/cliente_route.js";
-import veiculo_router from "./routes/veiculo_route.js";
+import Workshop_router from "./routes/ Workshop_route.js";
+import Maintenance_router from "./routes/ Maintenance_route.js";
+import Vehicle_router from "./routes/ Vehicle_route.js";
 
 const app = e();
 
 app.use(e.json());
 
-app.use("/cliente", cliente_router);
-app.use("/veiculo", veiculo_router);
+app.use("/Workshop", Workshop_router);
+app.use("/Maintenance", Maintenance_router);
+app.use("/Vehicle", Vehicle_router);
 
 app.listen(process.env.API_PORT, () => console.log("Servidor rodando"));
