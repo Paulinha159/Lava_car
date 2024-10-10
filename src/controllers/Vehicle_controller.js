@@ -11,7 +11,7 @@ export const store = async (req, res) => {
 
 export const index = async (req, res) => {
     try {
-        const content = await Vehicle.find(req.query).exec(); // Use Vehicle em vez de Maintenance
+        const content = await Vehicle.find(req.query).exec(); 
         res.json(content);
     } catch (error) {
         res.status(400).send(error.message);
@@ -21,7 +21,7 @@ export const index = async (req, res) => {
 export const show = async (req, res) => {
     try {
         const content = await Vehicle.findById(req.params.id)
-            .populate("maintenance") // Use o nome correto da referência
+            .populate("maintenance") 
             .exec();
         res.json(content);
     } catch (error) {
