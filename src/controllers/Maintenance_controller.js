@@ -21,7 +21,7 @@ export const index = async (req, res) => {
 export const show = async (req, res) => {
     try {
         const content = await Maintenance.findById(req.params.id)
-            .populate("workshop vehicle") // Corrigido para os nomes corretos
+            .populate("workshop vehicle") 
             .exec();
         res.json(content);
     } catch (error) {
