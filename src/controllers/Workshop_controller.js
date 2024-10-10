@@ -11,7 +11,7 @@ export const store = async (req, res) => {
 
 export const index = async (req, res) => {
     try {
-        const content = await Workshop.find(req.query).exec(); // Usar Workshop em vez de Maintenance
+        const content = await Workshop.find(req.query).exec(); 
         res.json(content);
     } catch (error) {
         res.status(400).send(error.message);
@@ -20,8 +20,8 @@ export const index = async (req, res) => {
 
 export const show = async (req, res) => {
     try {
-        const content = await Workshop.findById(req.params.id) // Usar Workshop aqui também
-            .populate("manutencao") // Alterar para a propriedade correta
+        const content = await Workshop.findById(req.params.id) 
+            .populate("manutencao") 
             .exec();
         res.json(content);
     } catch (error) {
